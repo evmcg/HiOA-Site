@@ -1,0 +1,462 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+
+// RESET STUFF
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; margin:0; padding:0; }
+body { background: #939393; }
+a { text-decoration: none; color:white; transition: all .4s ease;
+
+  &:hover { color: lighten(white, .005%); }
+  &:active { color: lighten(white, 90%);  }
+}
+
+
+
+// UTILITIES
+.clear { clear: both; }
+.hide { display: none; }
+.arrow-white {
+  display: inline-block;
+  background: url("https://dl.dropboxusercontent.com/s/pqv6yae8vjh4ezq/arrow-white.png") 0 0 no-repeat;
+  width: 18px;
+  height: 18px;
+  margin: 5px 8px 0 0;
+
+  &.leftar { @include transform(rotate(180deg)); }
+  &.rightar { 
+    margin: 5px 0 0 8px;}
+  &.upar { @include transform(rotate(-90deg)); }
+
+  @media all and (max-width: 400px){
+    background: url("https://dl.dropboxusercontent.com/s/8wefjxalcdy0h3h/arrow-white-mobile.png") 0 0 no-repeat;
+    width: 12px;
+    height: 12px; }
+  }
+
+
+.arrow-student { 
+  display: block;
+  background: url("https://dl.dropboxusercontent.com/s/pqv6yae8vjh4ezq/arrow-white.png") 0 0 no-repeat;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  
+  @include transition(all ease .2s);
+  
+  &.up {
+    @include transform(rotate(-90deg));
+  }
+}
+
+
+
+
+// PAGE LAYOUTS
+
+#wrap {
+  width: 100%;
+  padding: 0 5%;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @media all and (max-width: 400px){
+    padding: 0 0px;
+ }
+  
+  @media all and (max-width: 1100px){
+    padding: 0 12px;
+ }
+}
+
+nav {
+  width: 100%; 
+  margin: 0px 0px 0px 28px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font: 24px/34px Feijoa, Georgia, serif;
+  position:relative;
+  
+  @media all and (max-width: 400px){
+  padding-top: 25px;
+  font: 18px/24px Feijoa, Georgia, serif;
+  margin: 0 0 0 14px;
+  }
+  
+  .back{
+    width: 23.4375%;
+    float: left;
+      
+    @media all and (max-width: 400px){
+      padding-left: 0px; }
+
+  }
+  
+  .project-nav {
+    width: 23.4375%;
+    margin-left: 53.4375%;
+
+    .prev {
+      width: 150px;
+      float: left;
+      text-align: left;
+
+      @include transition(all ease .2s);    
+    }
+    
+    .next {
+      width: 150px;
+      float: left;
+      text-align: right;
+      
+      @media all and (max-width: 768px){
+        width: 90px; }
+
+      @media all and (max-width: 400px){
+        margin: 6px 0 0 0px;
+        width: 82px; }
+    }
+  }
+}
+
+.project {
+  margin: 0px 28px 0px 28px;
+  padding-top: 50px;
+  vertical-align: middle;
+
+  @media all and (max-width: 400px){
+    padding-top: 25px; 
+    margin: 0 0 0 14px;
+  }    
+
+}
+
+.feature {
+  
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    
+   
+   img.main {
+    max-width: 100%;
+   }
+        
+  .student {
+    width: 300px;
+    margin-left: 328px;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: -50px;
+  }
+       
+}
+  
+ .text {
+    margin: 100px 0 100px 0;
+    font: 24px/34px Feijoa, Georgia, serif;
+    color: white;
+    float: left;
+   
+    @media all and (max-width: 1020px){
+      margin: 100px 0 100px 0;
+    }
+
+    @media all and (max-width: 1021px){
+      margin: 50px 0 50px 0; }
+  
+    @media all and (max-width: 768px){
+      margin: 0px 0 0px 0;
+    }
+
+    @media all and (max-width: 400px){
+      width: 300px;
+      font: 18px/24px Feijoa, Georgia, serif;
+      margin: 28px 0 0 0; 
+    }
+  
+  .title { 
+    width: 300px;
+    float: left;
+    margin-right: 28px;
+
+    @media all and (max-width: 1021px){
+      width: 600px;
+      margin: 0px; 
+    }
+
+    @media all and (max-width: 768px){
+      width: 600px;
+      margin: 0px;
+    }
+    
+    @media all and (max-width: 400px){
+      width: 400px;
+      font: 18px/24px Feijoa, Georgia, serif;
+      margin: 0px;
+      float: left; 
+    }
+    
+   }
+    
+    h2 { 
+      font: 24px/34px Feijoa, Georgia, serif;
+      margin-right: 28px;
+      
+      @media all and (max-width: 1021px){
+        width: 300px;
+        margin: 0 28px 34px 0;
+        float: left; 
+      }
+
+      @media all and (max-width: 769px){
+        width: 300px;
+        margin: 0 28px 34px 0;
+        float: left; 
+      }
+
+      @media all and (max-width: 400px){
+        width: 180px;
+        margin: 0 18px 0 0px;
+        font: 18px/24px Feijoa, Georgia, serif;
+        float: left; 
+      }
+    }
+    
+    ul, li { list-style-type: none; }    
+  
+   .contact { 
+      width: 300px;
+      margin-top: 34px;
+      font: 20px/25px Avenir, Futura, Arial, sans-serif;
+
+      @media all and (max-width: 1021px){
+        width: 150px;
+        margin: 0px;
+        font: 20px/25px Avenir, Futura, Arial, sans-serif;
+        float: left; 
+      }
+     
+      @media all and (max-width: 769px){
+        width: 150px;
+        margin: 0px;
+        font: 20px/25px Avenir, Futura, Arial, sans-serif;
+        float: left; 
+      }
+
+      @media all and (max-width: 400px){
+        width: 130px;
+        margin: 0px;
+        font: 16px/22px Avenir, Futura, Arial, sans-serif;
+        float: left; 
+      }
+     
+    }
+   
+    .info {
+      float:left;
+      width: 850px;
+    
+      p:nth-child(n+2) { 
+        text-indent: 100px; }
+      
+      @media all and (max-width: 1428px){
+        width: 956px;
+      }
+    
+      @media all and (max-width: 1375px){
+        width: 600px;
+      }
+
+      @media all and (max-width: 1021px){
+        width: 820px;
+        margin: 0 0 50px 0;
+      }
+
+      @media all and (max-width: 768px){
+        width: 600px;
+        margin: 0 0 50px 0;
+      }
+
+      @media all and (max-width: 400px){
+        width: 350px;
+        font: 18px/24px Feijoa, Georgia, serif;
+        margin: 25px 0 50px 0;
+      
+        p:nth-child(n+2) { 
+          text-indent: 50px; }
+      }
+     
+      }
+   
+     }
+
+     .left {
+        width: 100%;
+        float: left;
+        padding-bottom: 100px;
+
+        @media all and (max-width: 768px){
+          padding-bottom: 50px;
+        }
+
+        @media all and (max-width: 400px){
+          padding-bottom: 25px;
+        }
+       
+       img { 
+        max-width: 74.6875%;
+        float: left; 
+        
+        @media all and (max-width: 400px){
+          max-width: 100%;
+        }
+       }
+      }
+
+     .right {
+        width: 100%;
+        float: right;
+
+        @media all and (max-width: 768px){
+          padding-bottom: 50px;
+        }
+
+        @media all and (max-width: 400px){
+          padding-bottom: 25px;
+        }
+     
+       img { 
+        max-width: 74.6875%;
+        float: left; 
+        
+        @media all and (max-width: 400px){
+          max-width: 100%;
+        }
+       }  
+      }
+
+      .caption-left {
+         float: left;
+         margin-left: 28px;
+         width: 300px;
+         font: 20px/25px Avenir, Futura, Arial, sans-serif;
+         color: white; 
+        
+      @media all and (max-width: 768px){
+         width: 150px;
+         font: 13px/18px Avenir, Futura, Arial, sans-serif;
+         margin: 0 0 0 14px;
+        }
+
+      @media all and (max-width: 400px){
+         padding-top: 14px;
+         font: 16px/22px Avenir, Futura, Arial, sans-serif;
+         margin: 0px;
+        }
+      }
+
+      .caption-right {
+         float: left;
+         margin-right: 28px;
+         width: 300px;
+         font: 20px/25px Avenir, Futura, Arial, sans-serif;
+         color: white;
+
+      @media all and (max-width: 768px){
+         width: 150px;
+         font: 13px/18px Avenir, Futura, Arial, sans-serif;
+         margin: 0 14px 0 0;
+        } 
+
+      @media all and (max-width: 400px){
+         font: 16px/22px Avenir, Futura, Arial, sans-serif;
+         margin: 0px;
+        }
+
+      }
+
+
+/* Attempted this shoter colde, but it didn't work out.
+
+      .caption {
+         float: left;
+         width: 300px;
+         font: 20px/25px Avenir, Futura, Arial, sans-serif;
+         color: white;
+        
+         .left { margin: 0 0 0 28px; }
+        
+         .right { margin: 0 28px 0 0; }
+        
+      }
+*/
+
+// FOOTER
+footer {
+  margin: 0px 0px 0px 28px;
+  padding: 80px 0px 50px 0px;
+  font: 20px/34px Feijoa, Georgia, serif;
+  color: white;
+  position:relative;
+  
+    @media all and (max-width: 400px){
+    width: 300px;
+    font: 18px/24px Feijoa, Georgia, serif;
+    margin: 0px 0px 0px 14px;
+
+    }
+  
+  .site { 
+    width: 300px;
+    float: left;
+    margin-right: 25px;
+  }
+  
+  .credit { 
+    width: 600px;
+    float: left;
+    
+    @media all and (max-width: 400px){
+      padding-top: 28px;
+    }
+  }
+  
+  .top { 
+    width: 300px;
+    position:absolute;
+    text-align:right;
+    top: 80px;
+    left: 656px;
+    
+    @media all and (min-width: 1310px) {
+      left: 982px;
+    }
+
+    @media all and (max-width: 969px) {
+      top: 0;
+      position: relative;
+      float: left;
+      left: 0;
+      text-align:left;
+    }
+    
+    @media all and (max-width: 400px){
+      top: 28px;
+      position: relative;
+      float: left;
+      left: 0;
+      text-align:left;
+    }
+    
+  }
+  
+}
